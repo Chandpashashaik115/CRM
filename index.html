@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CRM Settings</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple CRM</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
       background: #f4f6f8;
+      color: #333;
     }
 
     header {
@@ -18,30 +23,89 @@
       padding: 16px 24px;
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .container {
+      display: flex;
+      min-height: calc(100vh - 64px);
+    }
+
+    aside {
+      width: 220px;
+      background: #34495e;
+      color: #fff;
+      padding: 20px;
+    }
+
+    aside ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    aside li {
+      margin-bottom: 12px;
+    }
+
+    aside a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    aside a:hover {
+      text-decoration: underline;
+    }
+
     main {
+      flex: 1;
       padding: 24px;
     }
 
     .card {
       background: #fff;
-      padding: 20px;
       border-radius: 6px;
-      max-width: 600px;
+      padding: 20px;
+      margin-bottom: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+      background: #f0f2f5;
+    }
+
     .btn {
-      display: inline-block;
-      margin-top: 16px;
       background: #3498db;
       color: #fff;
+      border: none;
       padding: 8px 14px;
-      text-decoration: none;
       border-radius: 4px;
+      cursor: pointer;
     }
 
     .btn:hover {
       background: #2980b9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px;
+      font-size: 14px;
+      color: #777;
     }
   </style>
 </head>
@@ -49,24 +113,64 @@
 <body>
 
   <header>
-    <h1>Settings</h1>
+    <h1>My CRM Dashboard</h1>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>CRM Settings</h2>
-      <p>Manage application preferences, users, and system configuration.</p>
+  <div class="container">
 
+    <aside>
       <ul>
-        <li>User Management</li>
-        <li>Notifications</li>
-        <li>Theme Settings</li>
-        <li>Security</li>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Leads</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Reports</a></li>
+        <li><a href="settings.html">Settings</a></li>
       </ul>
+    </aside>
 
-      <a href="index.html" class="btn">⬅ Back to Dashboard</a>
-    </div>
-  </main>
+    <main>
+
+      <div class="card">
+        <h2>Overview</h2>
+        <p>Welcome to your CRM system. Manage customers, leads, and deals in one place.</p>
+      </div>
+
+      <div class="card">
+        <h2>Customers</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>john@example.com</td>
+              <td>Active</td>
+              <td><button class="btn">View</button></td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>jane@example.com</td>
+              <td>Lead</td>
+              <td><button class="btn">View</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+  </div>
+
+  <footer>
+    © 2026 Simple CRM
+  </footer>
 
 </body>
 </html>
